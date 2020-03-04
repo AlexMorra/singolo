@@ -1,0 +1,181 @@
+body {
+    width: 1020px;
+    margin: 0 auto;
+    font-family: 'Lato', serif;
+    color: #666d89;
+}
+
+.quote-wrapper {
+    margin: 54px 33px 0 34px;
+}
+
+.quote {
+    background-color: #f06c64;
+    height: 642px;
+    border: 6px solid #ea676b;
+}
+
+.quote h2 {
+    color: #f0d8d9;
+    font-size: 30px;
+    font-weight: 900;
+    margin-bottom: 0;
+}
+
+.quote p {
+    color: #f0d8d9;
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 31px;
+    word-spacing: 1px;
+    margin-bottom: 43px;
+}
+
+.flex-wrapper {
+    display: flex;
+}
+
+form {
+    margin-right: 20px;
+    width: min-content;
+}
+
+input[type='text'],
+input[type='email'],
+textarea {
+    width: 618px;
+    background-color: #d6564f;
+    border: none;
+    border-radius: 4px;
+    margin-bottom: 16px;
+    text-indent: 14px;
+    line-height: normal;
+}
+
+input[type='submit'] {
+    cursor: pointer;
+    border: none;
+    padding: 5px 10px;
+    background-color: #d6564f;
+    border-radius: 5px;
+   color: #f0d8d9;
+}
+input[type='submit']:active {
+    transform: scale(0.9);
+}
+
+input[type='text']::placeholder,
+input[type='email']::placeholder,
+textarea::placeholder {
+    font-size: 12px;
+    color: #f48c8f;
+    transform: translate(0, -1px);
+}
+
+textarea::placeholder {
+    transform: translate(-1px, -5px);
+}
+
+input[type='text'],
+input[type='email'] {
+    height: 36px;
+}
+
+textarea {
+    resize: none;
+    width: 615px;
+    height: 185px;
+    padding-top: 15px;
+}
+
+.contact h3 {
+    font-size: 18px;
+    font-weight: 900;
+    margin: -1px 0 0 0;
+    color: #f0d8d9;
+    word-spacing: -1px;
+}
+
+.contact p {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 22px;
+    margin: 8px 0 0 0;
+    word-spacing: -1px;
+    text-align: justify;
+}
+
+.quote ul {
+    list-style: none;
+    padding-left: 24px;
+    margin: 25px 0 0 0;
+    font-size: 12px;
+    color: #f0d8d9;
+    font-weight: 400;
+}
+
+.quote li {
+    position: relative;
+    margin-bottom: 8px;
+    cursor: pointer;
+}
+
+.quote li a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.quote li:first-child:before {
+    content: '';
+    position: absolute;
+    background-image: url('assets/img/singolo3/location.png');
+    background-repeat: no-repeat;
+    left: -20px;
+    top: 1px;
+    width: 15px;
+    height: 15px;
+}
+
+.quote li:nth-child(2):before {
+    content: '';
+    position: absolute;
+    background-image: url('assets/img/singolo3/phone.png');
+    background-repeat: no-repeat;
+    left: -22px;
+    top: 1px;
+    width: 15px;
+    height: 15px;
+}
+
+.quote li:last-child:before {
+    content: '';
+    position: absolute;
+    background-image: url('assets/img/singolo3/mail.png');
+    background-repeat: no-repeat;
+    left: -23px;
+    top: 4px;
+    width: 15px;
+    height: 15px;
+}
+
+footer {
+    height: 76px;
+    background-color: #2d303a;
+}
+
+footer span {
+    display: inline-block;
+    font-size: 12px;
+    margin: 31px 0 0 41px;
+}
+
+.social {
+    margin: 22px 35px 0 0px;
+    float: right;
+}
+
+.social img {
+    width: 34px;
+    height: 34px;
+    margin-right: 3px;
+}
