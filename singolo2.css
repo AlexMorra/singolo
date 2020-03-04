@@ -2,8 +2,7 @@ body {
     width: 1020px;
     margin: 0 auto;
     font-family: 'Lato', serif;
-    color: #666d89;
-}
+    }
 
         /* PORTFOLIO */
 
@@ -12,16 +11,17 @@ body {
     background-color: #2d303a;
     border-bottom: 6px solid #323746;
     padding-left: 40px;
+    color: #666d89;
 }
 
-h2 {
+.portfolio h2 {
     padding-top: 60px;
     margin: 0;
     font-size: 30px;
     font-weight: 900;
 }
 
- p {
+.portfolio p {
     font-size: 18px;
     font-weight: 300;
     color: #767e9e;
@@ -45,7 +45,7 @@ h2 {
     font-size: 12px;
 }
 
-a {
+.portfolio a {
     color: #ffffff;
     border-color: #ffffff;
 }

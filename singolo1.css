@@ -216,7 +216,7 @@ li:before {
     position: absolute;
     height: 60px;
     width: 60px;
-    background-image: url("assets/img/Ellipse.png");
+    background-image: url("assets/img/singolo1/Ellipse.png");
     background-repeat: no-repeat;
     left: -79px;
     top: -18px;
@@ -227,7 +227,7 @@ li:before {
     position: absolute;
     height: 60px;
     width: 60px;
-    background-image: url("assets/img/pen.png");
+    background-image: url("assets/img/singolo1/pen.png");
     background-repeat: no-repeat;
     left: -65px;
     top: -5px;
@@ -238,7 +238,7 @@ li:before {
     position: absolute;
     height: 60px;
     width: 60px;
-    background-image: url("assets/img/bulb.png");
+    background-image: url("assets/img/singolo1/bulb.png");
     background-repeat: no-repeat;
     left: -62px;
     top: -6px;
@@ -249,7 +249,7 @@ li:before {
     position: absolute;
     height: 60px;
     width: 60px;
-    background-image: url("assets/img/heart.png");
+    background-image: url("assets/img/singolo1/heart.png");
     background-repeat: no-repeat;
     left: -66px;
     top: -3px;
@@ -260,7 +260,7 @@ li:before {
     position: absolute;
     height: 60px;
     width: 60px;
-    background-image: url("assets/img/phone.png");
+    background-image: url("assets/img/singolo1/phone.png");
     background-repeat: no-repeat;
     left: -61px;
     top: -5px;
@@ -271,7 +271,7 @@ li:before {
     position: absolute;
     height: 60px;
     width: 60px;
-    background-image: url("assets/img/bubble.png");
+    background-image: url("assets/img/singolo1/bubble.png");
     background-repeat: no-repeat;
     left: -66px;
     top: -3px;
@@ -282,7 +282,7 @@ li:before {
     position: absolute;
     height: 60px;
     width: 60px;
-    background-image: url("assets/img/star.png");
+    background-image: url("assets/img/singolo1/star.png");
     background-repeat: no-repeat;
     left: -67px;
     top: -4px;
