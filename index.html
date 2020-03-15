@@ -7,28 +7,37 @@
     <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body id="home">
 <header>
     <h1 class="logo">SINGOLO<span>*</span></h1>
-    <nav class="menu">
+    <nav class="menu" id="header_menu">
         <ul>
-            <li><a href="#">HOME</a></li>
-            <li><a href="#">SERVICES</a></li>
-            <li><a href="#">PORTFOLIO</a></li>
-            <li><a href="#">ABOUT</a></li>
-            <li><a href="#">CONTACT</a></li>
+            <li>HOME</li>
+            <li>SERVICES</li>
+            <li>PORTFOLIO</li>
+            <li>ABOUT</li>
+            <li>CONTACT</li>
         </ul>
     </nav>
 </header>
 
-<section class="slider">
-    <img src='assets/img/singolo1/iPhone_Vertical.png' alt="">
-    <img src="assets/img/singolo1/iPhone_Horizontal.png" alt="">
+<section class="slider" id="slider">
+    <div class='slide-single'>
+        <div class="screen-1" id="screen-1"></div>
+        <div class="screen-2" id="screen-2"></div>
+        <img src="assets/img/1.png" alt="">
+    </div>
+    <div class="slide-single">
+        <img src="assets/img/2.png" alt="">
+    </div>
+
+
+
     <img class="prev" src="assets/img/singolo1/chev.png" alt="">
     <img class="next" src="assets/img/singolo1/chev.png" alt="">
 </section>
 
-<section class="services">
+<section class="services" id="services">
 
     <h2>Our Services</h2>
 
@@ -70,57 +79,57 @@
     </div>
 </section>
 
-<section class="portfolio">
+<section class="portfolio" id="portfolio">
     <h2>Portfolio</h2>
 
     <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
 
-    <ul class="tags">
-        <li class="active"><a href="#">All</a></li>
-        <li><a href="#">Web Design</a></li>
-        <li><a href="#">Graphic Design</a></li>
-        <li><a href="#">Artwork</a></li>
+    <ul class="tags" id="tags">
+        <li class="active">All</li>
+        <li>Web Design</li>
+        <li>Graphic Design</li>
+        <li>Artwork</li>
     </ul>
     <div class="images">
         <div>
-            <img src="assets/img/singolo2/Project%20(6).png" alt="">
+            <img class="img-1" src="assets/img/singolo2/Project%20(6).png" alt="">
         </div>
         <div>
-            <img src="assets/img/singolo2/Project%20(3).png" alt="">
+            <img class="img-2" src="assets/img/singolo2/Project%20(3).png" alt="">
         </div>
         <div>
-            <img src="assets/img/singolo2/Layer%209.png" alt="">
+            <img class="img-3" src="assets/img/singolo2/Layer%209.png" alt="">
         </div>
         <div>
-            <img src="assets/img/singolo2/Project%20(8).png" alt="">
+            <img class="img-4" src="assets/img/singolo2/Project%20(8).png" alt="">
         </div>
         <div>
-            <img src="assets/img/singolo2/Project%20(5).png" alt="">
+            <img class="img-5" src="assets/img/singolo2/Project%20(5).png" alt="">
         </div>
         <div>
-            <img src="assets/img/singolo2/Project%20(2).png" alt="">
+            <img class="img-6" src="assets/img/singolo2/Project%20(2).png" alt="">
         </div>
         <div>
-            <img src="assets/img/singolo2/Layer%2011.png" alt="">
+            <img class="img-7" src="assets/img/singolo2/Layer%2011.png" alt="">
         </div>
         <div>
-            <img src="assets/img/singolo2/Layer%208.png" alt="">
+            <img class="img-8" src="assets/img/singolo2/Layer%208.png" alt="">
         </div>
         <div>
-            <img src="assets/img/singolo2/Project%20(4).png" alt="">
+            <img class="img-9" src="assets/img/singolo2/Project%20(4).png" alt="">
         </div>
         <div>
-            <img src="assets/img/singolo2/Project%20(1).png" alt="">
+            <img class="img-10" src="assets/img/singolo2/Project%20(1).png" alt="">
         </div>
         <div>
-            <img src="assets/img/singolo2/Project.png" alt="">
+            <img class="img-11" src="assets/img/singolo2/Project.png" alt="">
         </div>
         <div>
-            <img src="assets/img/singolo2/Project%20(7).png" alt="">
+            <img class="img-12" src="assets/img/singolo2/Project%20(7).png" alt="">
         </div>
     </div>
 </section>
-<section class="aboutUs">
+<section class="aboutUs" id="about">
     <h2>About Us</h2>
 
     <p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non commodo luctus,
@@ -128,7 +137,7 @@
         tortor mauris condimentum nibh.</p>
     <div class="about-items">
         <div class="about-item">
-            <img src="assets/img/singolo2/photo.png" alt="">
+            <img src="assets/img/singolo2/photo.png" alt="" data-img="portfolio-img" class="portfolio-img">
             <h3>Adam Jensen</h3>
             <p>Quisque luctus quam eget molestie comodo lacus purus cursus purus, nec  rutrum tellus
                 dolor id lorem.</p>
@@ -140,7 +149,7 @@
             </div>
         </div>
         <div class="about-item">
-            <img src="assets/img/singolo2/photo%20(1).png" alt="">
+            <img src="assets/img/singolo2/photo%20(1).png" alt="" data-img="portfolio-img" class="portfolio-img">
             <h3>Desmond Miles</h3>
             <p>Curabitur vestibulum eget mauris quis laoreet. Phasellus in quam laoreet, viverra lacus ut,
                 ultrices velit.</p>
@@ -152,7 +161,7 @@
             </div>
         </div>
         <div class="about-item">
-            <img src="assets/img/singolo2/photo%20(2).png" alt="">
+            <img src="assets/img/singolo2/photo%20(2).png" alt="" data-img="portfolio-img" class="portfolio-img">
             <h3>Scolara Visari</h3>
             <p>Nulla sed nunc et totor luctus faucibus. Morbi at aliquet turpis, et consequat felis.
                 Quisque condimentum.</p>
@@ -174,17 +183,17 @@
             luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus
             commodo, tortor mauris condimentum nibh.</p>
         <div class="flex-wrapper">
-            <form action="#" method="POST">
+            <form action="#" method="POST" id="form">
                 <input type="text" id="name" name="name"
                        placeholder="Name (Required)" required>
                 <input type="email" id="email"  name="email"
                        placeholder="Email (Required)" required>
                 <input type="text" id="subject" name="subject" placeholder="Subject">
-                <textarea name="note" id="note"
+                <textarea name="note" id="describe"
                           placeholder="Describe your project in detail..."></textarea>
-                <input type="submit" value="SEND">
+                <input type="submit" value="SEND" id="form_submit">
             </form>
-            <div class="contact">
+            <div class="contact" id="contact">
                 <h3>Contact Information</h3>
                 <p>Quisque hendrerit purus dapibus, ornare nibh vitae, viver- ra nibh. Fusce vitae
                     aliquam tellus. Proin sit amet volutpat libero. Nulla sed nunc et tortor luctus faucibus.
@@ -198,7 +207,6 @@
         </div>
     </div>
 </section>
-
 <footer>
     <span>&copy; Copyright 2013</span>
 
@@ -209,5 +217,7 @@
         <a href="#"><img src="assets/img/singolo2/LinkedIn.png" alt="LinkedIn"></a>
     </div>
 </footer>
+
+<script src="script.js"></script>
 </body>
 </html>
