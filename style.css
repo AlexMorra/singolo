@@ -471,6 +471,7 @@ section {
 
 .about-items {
     display: flex;
+    flex-wrap: wrap;
 }
 
 .about-items img {
@@ -725,4 +726,82 @@ footer .social img {
     width: 30px;
     height: 100%;
     background-color: black;
+}
+
+
+@media  (max-width : 768px) {
+    body {
+        width: 768px;
+    }
+
+    .slider {
+        width: 768px;
+        height: 447px;
+    }
+
+    .slide-single img {
+        width: 768px;
+    }
+
+    .screen-1 {
+        top: 89px;
+        left: 95px;
+        width: 142px;
+        height: 252px;
+    }
+
+    .screen-2 {
+        top: 144px;
+        left: 365px;
+        width: 251px;
+        height: 142px;
+    }
+
+    .screen-3 {
+        top: 84px;
+        left: 299px;
+        width: 151px;
+        height: 267px;
+    }
+
+    .services {
+        height: 675px;
+    }
+
+    .portfolio {
+        height: 1102px;
+    }
+
+    .about-items img {
+        width: 219px;
+        height: 219px;
+    }
+
+    .social img {
+        width: 34px;
+        height: 34px;
+    }
+
+    .about-item {
+        width: 219px;
+        margin-right: 20px;
+    }
+
+    .quote {
+        height: 625px   ;
+    }
+
+    input[type='text'],
+    input[type='email'],
+    textarea {
+        width: 442px;
+
+    }
+
+    textarea {
+        width: 439px;
+        height: 159px;
+    }
+
+
 }

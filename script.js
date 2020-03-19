@@ -1,5 +1,7 @@
 // HEADER
 let header_menu = document.querySelector('#header_menu');
+let width = document.querySelector('body').offsetWidth;
+console.log(width);
 
 header_menu.addEventListener('click', function (e) {
     header_menu.querySelectorAll('li').forEach(li => {
@@ -50,41 +52,76 @@ portfolio.addEventListener('click', function (e) {
 let prev = document.querySelector('.prev');
 let next = document.querySelector('.next');
 let slider = document.querySelector('#slider');
-let images = document.querySelectorAll('.slide-single img');
+let slides = [];
 let slider_images = [];
+// [assets/img/1.png assets/img/2.png'
 
-for (let i = 0; i < images.length; i++){
-    let div = document.createElement('div');
-    let div_screen_1 = document.createElement('div');
-    let div_screen_2 = document.createElement('div');
-    let div_screen_3 = document.createElement('div');
+let slide_1 = document.createElement('div');
+slide_1.classList.add('slide-single');
+let phone1_screen = document.createElement('div');
+phone1_screen.classList.add('screen-1');
+phone1_screen.setAttribute('id', 'screen-1');
+let img_1 = document.createElement('img');
+img_1.src = 'assets/img/1.png';
+let phone_screen_2 = document.createElement('div');
+phone_screen_2.classList.add('screen-2');
+phone_screen_2.setAttribute('id', 'screen-2');
+slide_1.append(...[phone1_screen, phone_screen_2, img_1]);
 
-    div_screen_1.classList.add('screen-1');
-    div_screen_2.classList.add('screen-2');
-    div_screen_3.classList.add('screen-3');
+let slide_2 = document.createElement('div');
+slide_2.classList.add('slide-single');
+let phone2_screen = document.createElement('div');
+phone2_screen.classList.add('screen-3');
+phone2_screen.setAttribute('id', 'screen-3');
+let img_2 = document.createElement('img');
+img_2.src = 'assets/img/2.png';
+slide_2.append(...[phone2_screen, img_2]);
 
-    div_screen_1.setAttribute('id', 'screen-1');
-    div_screen_2.setAttribute('id', 'screen-2');
-    div_screen_3.setAttribute('id', 'screen-3');
+slides.push(slide_1);
+slides.push(slide_2);
 
-    let img = document.createElement('img');
-    div.classList.add('slide-single');
-    img.src = images[i].src;
-    slider_images[i] = div;
+slider.append(slides[0]);
 
-    if (img.src.includes('1')) {
-        div.append(div_screen_1);
-        div.append(div_screen_2);
-    } else {
-        div.append(div_screen_3);
-    }
-    div.append(img);
-    if (i !== 0) images[i].parentElement.remove();
+function left() {
+    prev.removeEventListener('click', left);
+    setTimeout(() => prev.addEventListener('click', left), 1100);
 
+    let swap = slides.shift();
+    slides.push(swap);
+    let current = document.querySelector('.slide-single');
+    let next_img = slides[0];
+    next_img.style.left = 1020 + 'px';
+    slider.append(next_img);
+    setTimeout(() => {
+        current.style.left = -1020 + 'px';
+        next_img.style.left = 0;
+    }, 1);
+
+    setTimeout(function () {
+        current.remove();
+    }, 1000);
 }
 
-next.addEventListener('click', right);
-prev.addEventListener('click', left);
+function right() {
+    next.removeEventListener('click', right);
+    setTimeout(() => next.addEventListener('click', right), 1100);
+
+    let swap = slides.shift();
+    slides.push(swap);
+    let current = document.querySelector('.slide-single');
+    let next_img = slides[0];
+    next_img.style.left = -1020 + 'px';
+    slider.append(next_img);
+
+    setTimeout(() => {
+        current.style.left = 1020 + 'px';
+        next_img.style.left = 0;
+    }, 1);
+
+    setTimeout(function () {
+        current.remove();
+    }, 1000);
+}
 
 slider.addEventListener('click', (e) => {
     if (e.target.getAttribute('id') === 'screen-1') {
@@ -98,42 +135,8 @@ slider.addEventListener('click', (e) => {
     }
 });
 
-
-function left() {
-    prev.removeEventListener('click', left);
-    setTimeout(() => prev.addEventListener('click', left), 1000);
-
-    let swap = slider_images.shift();
-    slider_images.push(swap);
-    let next_img = slider_images[0];
-    next_img.style.left = 1020 + 'px';
-    slider.append(next_img);
-    let current = document.querySelector('.slide-single');
-    current.style.left = 0 -1020 + 'px';
-    setTimeout(() => next_img.style.left = 0);
-
-    setTimeout(function () {
-        current.remove();
-    }, 1000);
-}
-
-function right() {
-    next.removeEventListener('click', right);
-    setTimeout(() => next.addEventListener('click', right), 1000);
-
-    let swap = slider_images.shift();
-    slider_images.push(swap);
-    let next_img = slider_images[0];
-    next_img.style.left = 0 - 1020 + 'px';
-    slider.append(next_img);
-    let current = document.querySelector('.slide-single');
-    current.style.left = 1020 + 'px';
-    setTimeout(() => next_img.style.left = 0);
-
-    setTimeout(function () {
-        current.remove();
-    }, 1000);
-}
+next.addEventListener('click', right);
+prev.addEventListener('click', left);
 
 // FORM
 
@@ -153,12 +156,20 @@ form_submit.addEventListener('click', (e) => {
     message.classList.add('message');
     message.textContent = 'The letter was sent';
 
-    let subject = document.querySelector('#subject');
-    let describe = document.querySelector('#describe');
-    let name = document.querySelector('#name');
-    let email = document.querySelector('#email');
+    let form = document.forms.form;
+    let name = form.name;
+    let email = form.email;
+    let subject = form.subject;
+    let describe = form.describe;
+
+
     let message_subject = document.createElement('div');
     let message_describe = document.createElement('div');
+
+    // console.log(name.value);
+    // console.log(email.value);
+    // console.log(subject.value);
+    // console.log(describe.value);
 
     if (!name.value) {
         name.classList.add('shake');
@@ -187,5 +198,6 @@ form_submit.addEventListener('click', (e) => {
     message.append(message_describe);
 
     quote_wrapper.append(message);
+    form.reset();
     setTimeout(() => message.remove(), 3000);
 });
