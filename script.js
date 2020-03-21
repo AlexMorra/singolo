@@ -38,11 +38,11 @@ portfolio.addEventListener('click', function (e) {
     }
     if (e.target.tagName === 'IMG') {
         portfolio_images.forEach(el => {
-            if (el.firstElementChild.src !== e.target.src) {
+            if (el.target.src !== e.target.src) {
                 el.classList.remove('img-touch')
             }
         });
-        e.target.parentElement.classList.toggle('img-touch');
+        e.target.classList.toggle('img-touch');
     }
 });
 
