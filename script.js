@@ -17,7 +17,7 @@ let tags = document.querySelector('#tags');
 let images_wrapper = document.querySelector('.images');
 
 portfolio.addEventListener('click', function (e) {
-    let portfolio_images = document.querySelectorAll('.images div');
+    let portfolio_images = document.querySelectorAll('.images img');
 
     if (e.target.tagName === 'LI') {
         tags.querySelectorAll('li').forEach(li => {
@@ -121,7 +121,6 @@ function right() {
     }, 1);
 
     setTimeout(function () {
-        console.log(current)
         current.remove();
     }, 1000);
 }
