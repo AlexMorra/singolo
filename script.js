@@ -1,7 +1,5 @@
 // HEADER
 let header_menu = document.querySelector('#header_menu');
-let width = document.querySelector('body').offsetWidth;
-console.log(width);
 
 header_menu.addEventListener('click', function (e) {
     header_menu.querySelectorAll('li').forEach(li => {
@@ -10,6 +8,7 @@ header_menu.addEventListener('click', function (e) {
     e.target.classList.add('menu_active');
     let scroll_to = document.getElementById(e.target.textContent.toLowerCase());
     scroll_to.scrollIntoView({ behavior: 'smooth'})
+    header_menu.style.left = -278 + 'px';
 });
 
 // PORTFOLIO
@@ -86,18 +85,20 @@ function left() {
     prev.removeEventListener('click', left);
     setTimeout(() => prev.addEventListener('click', left), 1100);
 
+    let width = document.querySelector('body').offsetWidth;
     let swap = slides.shift();
     slides.push(swap);
     let current = document.querySelector('.slide-single');
     let next_img = slides[0];
-    next_img.style.left = 1020 + 'px';
+    next_img.style.left = width + 'px';
     slider.append(next_img);
     setTimeout(() => {
-        current.style.left = -1020 + 'px';
+        current.style.left = -width + 'px';
         next_img.style.left = 0;
     }, 1);
 
     setTimeout(function () {
+
         current.remove();
     }, 1000);
 }
@@ -106,19 +107,21 @@ function right() {
     next.removeEventListener('click', right);
     setTimeout(() => next.addEventListener('click', right), 1100);
 
+    let width = document.querySelector('body').offsetWidth;
     let swap = slides.shift();
     slides.push(swap);
     let current = document.querySelector('.slide-single');
     let next_img = slides[0];
-    next_img.style.left = -1020 + 'px';
+    next_img.style.left = -width + 'px';
     slider.append(next_img);
 
     setTimeout(() => {
-        current.style.left = 1020 + 'px';
+        current.style.left = width + 'px';
         next_img.style.left = 0;
     }, 1);
 
     setTimeout(function () {
+        console.log(current)
         current.remove();
     }, 1000);
 }
@@ -135,8 +138,8 @@ slider.addEventListener('click', (e) => {
     }
 });
 
-next.addEventListener('click', right);
-prev.addEventListener('click', left);
+next.addEventListener('click', left);
+prev.addEventListener('click', right);
 
 // FORM
 
@@ -200,4 +203,18 @@ form_submit.addEventListener('click', (e) => {
     quote_wrapper.append(message);
     form.reset();
     setTimeout(() => message.remove(), 3000);
+});
+
+// @media375
+
+let burger_menu = document.querySelector('.burger-menu');
+
+burger_menu.addEventListener('click', function () {
+    burger_menu.classList.toggle('burger-active');
+    let position = header_menu.getAttribute('style');
+    if (position && position.includes('0')) {
+        header_menu.style.left = -278 + 'px';
+    } else {
+        header_menu.style.left = 0;
+    }
 });

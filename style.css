@@ -24,11 +24,16 @@ section {
     padding-top: 29px;
     padding-left: 39px;
     cursor: default;
+    transition: all ease 1s;
 }
 
 .logo span {
     color: #f06c64;
     transform: scale(5);
+}
+
+.burger {
+    display: none;
 }
 
 .menu {
@@ -371,7 +376,7 @@ section {
     height: 610px;
 }
 
-.images div {
+.images img {
     width: 220px;
     height: 187px;
     overflow: hidden;
@@ -381,66 +386,6 @@ section {
 
 .img-touch {
     outline: 5px solid #F06C64;
-}
-
-.img-1 {
-    position: absolute;
-    transform: translate(-8px, -11px);
-}
-
-.img-2{
-    position: absolute;
-    transform: translate(-82px, -43px);
-}
-
-.img-3 {
-    position: absolute;
-    transform: translate(-11px, -1px);
-}
-
-.img-4 {
-    position: absolute;
-    transform: translate(-24px, -2px);
-}
-
-.img-5 {
-    position: absolute;
-    transform: translate(-10px, -16px);
-}
-
-.img-6 {
-    position: absolute;
-    transform: translate(-16px, -4px);
-}
-
-.img-7 {
-    position: absolute;
-    transform: translate(-31px, -39px);
-}
-
-.img-8 {
-    position: absolute;
-    transform: translate(-24px, -32px);
-}
-
-.img-9 {
-    position: absolute;
-    transform: translate(-16px, -2px);
-}
-
-.img-10 {
-    position: absolute;
-    transform: translate(-141px, -113px);
-}
-
-.img-11 {
-    position: absolute;
-    transform: translate(-144px, -175px);
-}
-
-.img-12 {
-    position: absolute;
-    transform: translate(-36px, -60px);
 }
 
 /* PORTFOLIO */
@@ -571,6 +516,7 @@ section {
 
 .flex-wrapper {
     display: flex;
+    flex-wrap: wrap;
 }
 
 form {
@@ -594,9 +540,9 @@ input[type='submit'] {
     cursor: pointer;
     border: none;
     padding: 5px 10px;
-    background-color: #d6564f;
+    background-color: #FBC65F;
     border-radius: 5px;
-    color: #f0d8d9;
+    color: #886A30;
 }
 input[type='submit']:active {
     transform: scale(0.9);
@@ -624,6 +570,10 @@ textarea {
     width: 615px;
     height: 185px;
     padding-top: 15px;
+}
+
+.contact {
+    width: 300px;
 }
 
 .contact h3 {
@@ -743,6 +693,16 @@ footer .social img {
         width: 768px;
     }
 
+    .slider .prev {
+        left: 0px;
+        top: 200px;
+    }
+
+    .slider .next {
+        right: 0px;
+        top: 200px;
+    }
+
     .screen-1 {
         top: 89px;
         left: 95px;
@@ -788,7 +748,7 @@ footer .social img {
     }
 
     .quote {
-        height: 625px   ;
+        height: 650px   ;
     }
 
     input[type='text'],
@@ -803,5 +763,249 @@ footer .social img {
         height: 159px;
     }
 
+    .contact {
+        width: 221px;
+    }
 
+
+}
+
+@media  (max-width : 375px) {
+    body {
+        width: 375px;
+    }
+
+    .logo {
+        margin-left: 85px;
+    }
+
+    .logo_move {
+        display: inline-block;
+        font-size: 25px;
+        color: white;
+        margin: 0;
+        padding-top: 29px;
+        padding-left: 39px;
+        cursor: default;
+        transition: all ease 1s;
+    }
+
+
+    .burger-menu {
+        position: absolute;
+        display: block;
+        width: 25px;
+        height: 20px;
+        left: 10px;
+        top: 20px;
+        padding: 15px;
+        z-index: 3;
+        transition: all ease 1s;
+        transform: rotate(0deg);
+    }
+
+    .burger {
+        position: absolute;
+        display: block;
+        width: 25px;
+        height: 3px;
+        background-color: #fff;
+        border-radius: 15%;
+    }
+
+    .burger-active {
+        transform: rotate(-90deg);
+    }
+
+    .burger:before,
+    .burger:after {
+        content: '';
+        position: relative;
+        display: block;
+        width: 25px;
+        height: 3px;
+        background-color: #fff;
+        border-radius: 15%;
+    }
+
+    .burger:before {
+        top: 20px;
+    }
+
+    .burger:after {
+        top: 7px;
+    }
+
+    .menu {
+        position: absolute;
+        width: 278px;
+        height: 100%;
+        top: 0;
+        left: -278px;
+        background: #2D303A;
+        box-shadow: 0px -40px 20px rgba(0, 0, 0, 0.4);
+        float: none;
+        margin: 0;
+        font-size: 12px;
+        font-weight: bold;
+        z-index: 2;
+        transition: all ease 1s;
+    }
+
+    .menu ul {
+        position: relative;
+        top: 150px;
+        display: block;
+        list-style: none;
+        color: #ffffff;
+        font-size: 24px;
+    }
+
+    .menu ul li:first-child:before {
+        content: '';
+    }
+
+    .menu li:before {
+        color: #494e62;
+        content: "";
+        padding-right: 0;
+    }
+
+    .menu li {
+        display: inline-block;
+        margin-right: 20px;
+        margin-bottom: 25px;
+        cursor: pointer;
+    }
+
+    .menu li:hover {
+        color: #f06c64;
+    }
+
+    .menu li:active {
+        color: #993832;
+    }
+
+    .menu_active {
+        color: #f06c64;
+    }
+
+    .slider {
+        width: 375px;
+        height: 218px;
+    }
+
+    .slide-single img {
+        width: 375px;
+    }
+
+    .slider .prev {
+        left: 0px;
+        top: 90px;
+    }
+
+    .slider .next {
+        right: 0px;
+        top: 90px;
+    }
+
+    .screen-1 {
+        top: 43px;
+        left: 46px;
+        width: 70px;
+        height: 124px;
+    }
+
+    .screen-2 {
+        top: 70px;
+        left: 178px;
+        width: 123px;
+        height: 70px;
+    }
+
+    .screen-3 {
+        top: 41px;
+        left: 146px;
+        width: 74px;
+        height: 131px;
+    }
+
+    .services {
+        height: 1120px;
+    }
+
+    .portfolio {
+        height: 1140px;
+        padding-left: 20px;
+    }
+
+    .tags li {
+        font-size: 12px;
+    }
+
+    .images img {
+        width: 151px;
+        height: 128px;
+    }
+
+    .aboutUs {
+        height: 1860px;
+        padding-left: 30px;
+    }
+
+
+    .about-items img {
+        width: 314px;
+        height: 314px;
+    }
+
+    .social img {
+        width: 34px;
+        height: 34px;
+    }
+
+    .about-item {
+        width: 314px;
+        margin-right: 20px;
+        margin-bottom: 20px;
+    }
+
+    .quote {
+        height: 1120px   ;
+    }
+
+    form {
+        margin-bottom: 25px;
+    }
+
+    input[type='text'],
+    input[type='email'],
+    textarea {
+        width: 296px    ;
+
+    }
+
+    textarea {
+        width: 292px;
+        height: 159px;
+    }
+
+    input[type='submit'] {
+        width: 100%;
+        height: 50px;
+        cursor: pointer;
+        border: none;
+        padding: 5px 15px;
+        background-color: #FBC65F;
+        border-radius: 5px;
+        color: #886A30;
+    }
+
+    footer > span {
+        display: none;
+    }
+
+    footer .social {
+        margin-right: 111px;
+    }
 }
