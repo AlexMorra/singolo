@@ -82,8 +82,8 @@ slides.push(slide_2);
 slider.append(slides[0]);
 
 function left() {
-    prev.removeEventListener('click', left);
-    setTimeout(() => prev.addEventListener('click', left), 1100);
+    next.removeEventListener('click', left);
+    setTimeout(() => next.addEventListener('click', left), 1100);
 
     let width = document.querySelector('body').offsetWidth;
     let swap = slides.shift();
@@ -104,8 +104,8 @@ function left() {
 }
 
 function right() {
-    next.removeEventListener('click', right);
-    setTimeout(() => next.addEventListener('click', right), 1100);
+    prev.removeEventListener('click', right);
+    setTimeout(() => prev.addEventListener('click', right), 1100);
 
     let width = document.querySelector('body').offsetWidth;
     let swap = slides.shift();
