@@ -38,7 +38,7 @@ portfolio.addEventListener('click', function (e) {
     }
     if (e.target.tagName === 'IMG') {
         portfolio_images.forEach(el => {
-            if (el.target.src !== e.target.src) {
+            if (el.src !== e.target.src) {
                 el.classList.remove('img-touch')
             }
         });
@@ -122,7 +122,7 @@ function right() {
 
     setTimeout(function () {
         current.remove();
-    }, 1000);
+    }, 1000);1
 }
 
 slider.addEventListener('click', (e) => {
