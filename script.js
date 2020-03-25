@@ -5,10 +5,14 @@ header_menu.addEventListener('click', function (e) {
     header_menu.querySelectorAll('li').forEach(li => {
         li.classList.remove('menu_active');
     });
-    e.target.classList.add('menu_active');
-    let scroll_to = document.getElementById(e.target.textContent.toLowerCase());
-    scroll_to.scrollIntoView({ behavior: 'smooth'})
-    header_menu.style.left = -278 + 'px';
+
+    if (e.target.tagName === 'LI' ) {
+        e.target.classList.add('menu_active');
+
+        let scroll_to = document.getElementById(e.target.textContent.toLowerCase());
+        scroll_to.scrollIntoView({ behavior: 'smooth'})
+        header_menu.style.left = -278 + 'px';
+    }
 });
 
 // PORTFOLIO
@@ -207,13 +211,27 @@ form_submit.addEventListener('click', (e) => {
 // @media375
 
 let burger_menu = document.querySelector('.burger-menu');
+let logo = document.querySelector('.logo');
+let logo_copy = logo.cloneNode(true);
+logo_copy.style.opacity = 0;
 
+// open/close menu :)
 burger_menu.addEventListener('click', function () {
+
     burger_menu.classList.toggle('burger-active');
+
     let position = header_menu.getAttribute('style');
     if (position && position.includes('0')) {
+
+        setTimeout(() => {
+            logo_copy.style.opacity = 0
+        }, 1);
+
         header_menu.style.left = -278 + 'px';
     } else {
+        header_menu.prepend(logo_copy);
+        setTimeout(() => logo_copy.style.opacity = 1, 700);
+
         header_menu.style.left = 0;
     }
 });
